@@ -1,0 +1,270 @@
+:root {
+  --baseBg-color: rgba(230, 230, 230, 1);
+  --black: rgba(0, 0, 0, 1);
+  --ledGreen: rgba(6, 250, 14, 1);
+  --ledGreenDim: rgba(6, 250, 14, 0.2);
+  --ledOrange: rgba(252, 145, 4, 1);
+  --ledRedVeryDim: rgba(254, 29, 44, 0.3);
+  --ledRedDim: rgba(254, 29, 44, 0.8);
+  --ledRed: rgba(254, 29, 44, 1);
+  --skyBlueDim: rgba(126, 192, 238, 0.2);
+  --skyBlue: rgba(126, 192, 238, 0.8);
+}
+
+.App {
+  height: 100%;
+  width: 60%;
+  margin: 0 20%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.buttonShadow {
+  box-shadow:
+    0px -5px 10px 0px rgba(255, 255, 255, 1),
+    0px 5px 10px 0px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(255, 255, 255, .5),
+    inset 0px 0px 2px 1px rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.buttonShadow:active {  
+  box-shadow:
+    0px 2px 2px 0px rgba(255, 255, 255, 1),
+    0px -2px 2px 0px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(255, 255, 255, .5),
+    inset 0px -5px 2px 1px rgba(255, 255, 255, 0.25);
+  text-shadow:
+    0px 2px 2px rgba(255, 255, 255, .5);
+  
+  transition: all .2s;
+}
+.globalSequenceControls {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sequencer {
+  width: 100%;
+  height: 10%;
+}
+
+.padMatrixContainer {
+  width: 100%;
+  height: 70%;
+  border-top: solid 1px var(--black);
+  border-radius: 5px;
+  padding-top: 5px;
+  box-shadow:
+    0px -5px 10px 0px rgba(255, 255, 255, 1),
+    0px 5px 10px 0px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(255, 255, 255, .5),
+    inset 0px 0px 2px 1px rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.padMatrixRowContainer {
+  height: 40px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.padMatrixCell {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  border: solid 1px var(--black);
+  border-radius: 5px;
+  background: var(--ledGreenDim);
+}
+
+.padMatrixCell:active {
+  background: var(--ledRedDim);
+}
+
+.rowName {
+  width: 100%;
+  display: flex;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.currentStepContainer {
+  height: 30px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stepCell {
+  height: 10px;
+  width: 30px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border: solid 1px var(--black);
+  border-radius: 5px;
+  background: var(--ledRedVeryDim);
+}
+
+.stepCell:active {
+  background: var(--ledRed);
+}
+
+.playControlBody {
+  display: flex;
+  margin-top: 5px;
+}
+
+.controlButton {
+  background-color: var(--baseBgColor);
+  border: none;
+  border-radius: 99999px;
+  transition: all 1s;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+.icon {
+  fill: var(--black, .75);
+  stroke: var(--black, .75);
+  stroke-width: 2px;
+  transition: all .2s;
+}
+
+.iconStop:active {
+  fill: var(--ledRed, .9);
+  stroke: var(--ledRed, .9);
+}
+
+.iconPlay:active {
+  fill: var(--ledGreen, .9);
+  stroke: var(--ledGreen, .9);
+}
+
+.tempo {
+  margin: 5px 40px 0;
+  font-size: 30px;
+}
+
+.tempoControl {
+  display: flex; 
+  justify-content: flex-end;
+  height: 45px;
+  width: 150px;
+  margin: 35px 10px;
+  padding: 5px 0;
+  border: solid 1px var(--black, .1);
+  background-color: var(--baseBgColor);
+  border: none;
+  border-radius: 99999px;
+  transition: all 1s;
+}
+
+.tempoButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.tempoButton {
+  margin-right: 10px;
+  fill: var(--black);
+  stroke-width:2;
+}
+
+.tempoButton:active {
+  fill: var(--ledOrange, .9);
+  stroke: var(--ledOrange, .9);
+}
+
+.sequencerIndexContainer {
+  height: 40px;
+  border-top: solid 1px var(--black);
+  border-bottom: solid 1px var(--black);
+  border-radius: 5px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow:
+    0px -5px 10px 0px rgba(255, 255, 255, 1),
+    0px 5px 10px 0px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(255, 255, 255, .5),
+    inset 0px 0px 2px 1px rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.sequencerIndex {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: 30px;
+  margin-right: 25px;
+  padding-left: 2px;
+}
+
+.sequenceSelectorText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sequenceSelectorContainer {
+  height: 30px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sequenceSelectorCell {
+  height: 10px;
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 20px;
+  border: solid 1px var(--black);
+  border-radius: 5px;
+  background: var(--skyBlueDim);
+}
+
+.sequenceSelectorCell:active {
+  background: var(--skyBlue);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
