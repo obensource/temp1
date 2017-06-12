@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import GlobalSequenceControls from './components/global-sequence-controls.js'
-import Sequencer from './components/sequencer.js'
+import Sequencer from './components/sequencer/sequencer.js'
 import PadMatrix from './components/pad-matrix.js'
 
 // header: play/tempo, sequence selector
@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="appTitle buttonShadow">JS-808</div>
         <GlobalSequenceControls />
         <Sequencer />
         <PadMatrix />

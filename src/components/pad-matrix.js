@@ -36,7 +36,13 @@ class PadMatrixRow extends Component {
       <div className="rowName">{rowName}</div>
       <div className="padMatrixRowContainer">
         {sequenceCount.map((sequenceIndex, i) => {
-          return <div key={i} className="padMatrixCell buttonShadow" />
+          return i >= 4
+            ? i % 4 === 0
+              ? <div key={i} className="padMatrixCell buttonShadow">•</div>
+              : <div key={i} className="padMatrixCell buttonShadow" />
+            : i === 0
+              ? <div key={i} className="padMatrixCell buttonShadow">•</div>
+              : <div key={i} className="padMatrixCell buttonShadow" />
         })}
       </div>
     </div>
